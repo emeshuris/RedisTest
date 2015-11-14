@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisTest", "RedisTest\RedisTest.csproj", "{EBAA9CDC-361B-43DF-B68D-D09DC18920EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{076BE99D-B8FE-4FB8-8E6A-204B975833BC}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisConnection", "RedisConnection\RedisConnection.csproj", "{AFE35FF5-6192-4676-B5B5-DA633785D75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{A2D7CC19-DD22-4CBC-BDDF-34BE93A7FD34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{A66A53A2-39E1-482A-A1A3-704D4A7ABFB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBAA9CDC-361B-43DF-B68D-D09DC18920EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAA9CDC-361B-43DF-B68D-D09DC18920EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAA9CDC-361B-43DF-B68D-D09DC18920EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAA9CDC-361B-43DF-B68D-D09DC18920EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE35FF5-6192-4676-B5B5-DA633785D75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE35FF5-6192-4676-B5B5-DA633785D75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE35FF5-6192-4676-B5B5-DA633785D75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE35FF5-6192-4676-B5B5-DA633785D75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D7CC19-DD22-4CBC-BDDF-34BE93A7FD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D7CC19-DD22-4CBC-BDDF-34BE93A7FD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D7CC19-DD22-4CBC-BDDF-34BE93A7FD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D7CC19-DD22-4CBC-BDDF-34BE93A7FD34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66A53A2-39E1-482A-A1A3-704D4A7ABFB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66A53A2-39E1-482A-A1A3-704D4A7ABFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66A53A2-39E1-482A-A1A3-704D4A7ABFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66A53A2-39E1-482A-A1A3-704D4A7ABFB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

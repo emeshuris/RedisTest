@@ -1,4 +1,5 @@
-﻿using StackExchange.Redis;
+﻿using Newtonsoft.Json;
+using StackExchange.Redis;
 using System;
 using System.Runtime.Caching;
 
@@ -6,7 +7,7 @@ namespace RedisConnection
 {
     public class RedisCache : ICache
     {
-        private const string REDIS_CONNECTION_STRING = "192.168.9.5:6379";
+        private const string REDIS_CONNECTION_STRING = "192.168.9.13:6379";
 
         private ConnectionMultiplexer _connectionMultiplexer;
 
@@ -34,7 +35,14 @@ namespace RedisConnection
         public CacheItem GetCacheItem(string key, string regionName = null)
         {
             CacheItem cacheItem = new CacheItem(key);
-            cacheItem.Value = RedisDatabase.StringGet(key);
+            RedisValue redisValue = RedisDatabase.StringGet(key);
+
+            if (redisValue.IsNullOrEmpty || !redisValue.HasValue)
+            {
+                return null;
+            }
+
+            cacheItem.Value = redisValue;
             return cacheItem;
         }
 
@@ -50,7 +58,8 @@ namespace RedisConnection
 
         public void Set(CacheItem cacheItem, CacheItemPolicy cacheItemPolicy)
         {
-            RedisDatabase.StringSet(cacheItem.Key, cacheItem.Value.ToString());
+            string serializedValue = JsonConvert.SerializeObject(cacheItem.Value);
+            RedisDatabase.StringSet(cacheItem.Key, serializedValue);
         }
 
         public void Dispose()

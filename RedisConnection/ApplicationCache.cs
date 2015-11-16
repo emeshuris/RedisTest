@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Runtime.Caching;
 
 namespace RedisConnection
@@ -32,16 +33,25 @@ namespace RedisConnection
         public static T Get<T>(string key)
         {
             CacheItem item = null;
+
             try
             {
                 item = _cache.GetCacheItem(key);
+
+                if (item == null)
+                {
+                    return default(T);
+                }
+
+                var deserializedValue = JsonConvert.DeserializeObject<T>(item.Value.ToString());
+                return deserializedValue;
             }
-            catch
+            catch(Exception ex)
             {
-                // ignored
+                Console.WriteLine(ex.Message);
             }
 
-            return item == null ? default(T) : (T)item.Value;
+            return default(T);
         }
 
         /// <summary>
